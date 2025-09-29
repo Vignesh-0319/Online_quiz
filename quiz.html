@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App - Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>Quiz App</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="quiz.html" class="active">Quiz</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="setup" class="card">
+      <h2>Quiz Settings</h2>
+      <label>Difficulty:
+        <select id="difficulty">
+          <option value="easy" selected>Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+      <label>Questions:
+        <select id="numQuestions">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="15">15</option>
+        </select>
+      </label>
+      <label>Time/Q:
+        <select id="timePerQ">
+          <option value="15">15s</option>
+          <option value="30" selected>30s</option>
+          <option value="45">45s</option>
+        </select>
+      </label>
+      <button id="startBtn" class="btn">Start Quiz</button>
+    </section>
+
+    <section id="questionArea" class="card hidden">
+      <div class="question-header">
+        <span>Question <span id="qIndex">1</span>/<span id="qTotal">10</span></span>
+        <span class="timer"><span id="timeLeft">30</span>s</span>
+      </div>
+      <div id="questionText" class="question"></div>
+      <div id="choices" class="choices"></div>
+      <p id="feedback"></p>
+      <button id="nextBtn" class="btn secondary" disabled>Next</button>
+    </section>
+
+    <section id="resultArea" class="card hidden">
+      <h2>Quiz Completed 🎉</h2>
+      <p id="finalScore"></p>
+      <p id="performanceText"></p>
+      <a href="results.html" class="btn">View Results</a>
+      <button id="retryBtn" class="btn">Retry</button>
+    </section>
+  </main>
+
+  <aside class="sidebar">
+    <div class="card">
+      <p>Score</p>
+      <h2 id="score">0</h2>
+      <div class="progress-bar">
+        <div id="progressBar"></div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
